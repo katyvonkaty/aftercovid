@@ -42,7 +42,7 @@ class App extends React.Component {
   // }
 
   componentDidMount(){
-    axios.get("https://app.ticketmaster.com/discovery/v2/suggest.json?apikey=FOaGhweA08BfKYU6NdaHXSzpj17GGLqI")
+    axios.get(`https://app.ticketmaster.com/discovery/v2/suggest.json?apikey=${process.env.REACT_APP_API_KEY}`)
     .then(response => {
       this.setState({attractions: response.data._embedded.attractions, events:response.data._embedded.events})
       console.log(response.data);
