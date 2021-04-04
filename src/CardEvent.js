@@ -1,10 +1,29 @@
 import React from "react"
+import SingleEvent from "./SingleEvent"
+import Container from "@material-ui/core/Container";
+import Grid from "@material-ui/core/Grid";
+
 
 const CardEvent = (props) => {
-  let test = props.events.map (x => <li> {x.name} </li>)
+  const renderedEvents = props.events.map (event => {
+  return <SingleEvent event={event} />
+});
 
 return (
-  <h1>  {test } </h1>
+  <>
+    <Container maxWidth="lg">
+      <h1> Local Events </h1>
+
+      <Grid
+        container
+        direction="row"
+        justify="space-evenly"
+        alignItems="center"
+      >
+        {renderedEvents}
+      </Grid>
+    </Container>
+  </>
 )
 }
 
