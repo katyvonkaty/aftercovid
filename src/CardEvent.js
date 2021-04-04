@@ -11,7 +11,6 @@ const CardEvent = (props) => {
 
 return (
   <>
-    <Container maxWidth="lg">
       <h1> Local Events </h1>
 
       <Grid
@@ -22,7 +21,6 @@ return (
       >
         {renderedEvents}
       </Grid>
-    </Container>
   </>
 )
 }

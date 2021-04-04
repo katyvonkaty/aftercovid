@@ -14,7 +14,6 @@ const CardAttraction = (props) => {
 
   return (
     <>
-      <Container maxWidth="lg">
         <h1> Local Attractions </h1>
 
         <Grid
@@ -25,7 +24,6 @@ const CardAttraction = (props) => {
         >
           {renderedAttractions}
         </Grid>
-      </Container>
     </>
   );
 };
