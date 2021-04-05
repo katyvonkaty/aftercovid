@@ -2,7 +2,7 @@ import React from "react"
 import axios from "axios"
 import Navbar from "./Navbar"
 import SearchBar from "./SearchBar"
-
+import EventSearchResult from "./EventSearchResult"
 import CardAttraction from "./CardAttraction"
 import CardEvent from "./CardEvent"
 import { makeStyles } from '@material-ui/core/styles';
@@ -20,7 +20,9 @@ class App extends React.Component {
   state= {
     attractions: [],
     events:[],
-    venues:[]
+    venues:[],
+    eventResults:[],
+    eventAttractions:[]
   }
 
 
@@ -32,11 +34,15 @@ class App extends React.Component {
     })
   }
 
-  onTermSubmit = (term) => {
-    axios.get(`https://app.ticketmaster.com/discovery/v2/events.json?keyword=${term}&apikey=${process.env.REACT_APP_API_KEY}`)
-      .then(response => {
-        console.log(response);
-      })
+  onTermSubmit = async (term) => {
+    const [response,response1] = await axios.all ([
+      axios.get(`https://app.ticketmaster.com/discovery/v2/events.json?keyword=${term}&apikey=${process.env.REACT_APP_API_KEY}`),
+        axios.get(`https://app.ticketmaster.com/discovery/v2/attractions.json?keyword=${term}&apikey=${process.env.REACT_APP_API_KEY}`)
+      ])
+    this.setState({eventResults:response.data._embedded.events})
+    this.setState({eventAttractions:response1.data._embedded.attractions})
+    console.log(response.data._embedded.attractions);
+
   }
 
   render(){
@@ -58,6 +64,7 @@ class App extends React.Component {
                 size="small"
               />
        </Grid>
+       <EventSearchResult eventResults = {this.state.eventResults} />
        <Grid item xs={6}>
        <img style={{width:"100%"}} src={bg} />
        </Grid>
