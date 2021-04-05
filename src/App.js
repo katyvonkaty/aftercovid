@@ -1,6 +1,8 @@
 import React from "react"
 import axios from "axios"
 import Navbar from "./Navbar"
+import SearchBar from "./SearchBar"
+
 import CardAttraction from "./CardAttraction"
 import CardEvent from "./CardEvent"
 import { makeStyles } from '@material-ui/core/styles';
@@ -23,11 +25,18 @@ class App extends React.Component {
 
 
   componentDidMount(){
-    axios.get(`https://app.ticketmaster.com/discovery/v2/suggest.json?keyword=music&apikey=${process.env.REACT_APP_API_KEY}`)
+    axios.get(`https://app.ticketmaster.com/discovery/v2/suggest.json?&apikey=${process.env.REACT_APP_API_KEY}`)
     .then(response => {
       this.setState({attractions: response.data._embedded.attractions.slice(0,4), events:response.data._embedded.events.slice(0,4)})
       console.log(response.data);
     })
+  }
+
+  onTermSubmit = (term) => {
+    axios.get(`https://app.ticketmaster.com/discovery/v2/events.json?keyword=${term}&apikey=${process.env.REACT_APP_API_KEY}`)
+      .then(response => {
+        console.log(response);
+      })
   }
 
   render(){
@@ -35,7 +44,7 @@ class App extends React.Component {
       <>
       <Navbar />
       <Container maxWidth="lg">
-
+      <SearchBar onFormSubmit={this.onTermSubmit} />
 
       <Grid container spacing={3} >
       <Grid item xs={6}>
