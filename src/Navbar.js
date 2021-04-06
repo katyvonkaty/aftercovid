@@ -7,6 +7,10 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import Container from "@material-ui/core/Container";
+
+import logo from "./assets/images/logo.png"
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -27,7 +31,10 @@ export default function Navbar() {
   return (
     <div className={classes.root}>
       <AppBar position="static">
+      <Container>
+
         <Toolbar>
+        <p> After Covid </p>
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
           <MenuIcon />
 
@@ -37,6 +44,8 @@ export default function Navbar() {
           </Typography>
           <Button color="inherit">Login</Button>
         </Toolbar>
+        </Container>
+
       </AppBar>
     </div>
   );

@@ -8,25 +8,25 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
-const useStyles = makeStyles({
-  root: {
-    maxWidth: 345,
-  },
-});
+// const useStyles = makeStyles({
+//   root: {
+//     maxWidth: 345,
+//   },
+// });
 
 
 const SingleAttraction = ({ attraction }) => {
-  const classes = useStyles();
+  // const classes = useStyles();
 
   return (
 
-    <Card className={classes.root}>
+    <Card style={{width:"300px", height:"400px"}}>
      <CardActionArea>
        <CardMedia
          component="img"
          alt="Contemplative Reptile"
          height="140"
-         src={attraction.images[0].url}
+         src={attraction.image}
          style={{ width: "100%" }}
          title="Contemplative Reptile"
        />
@@ -35,9 +35,8 @@ const SingleAttraction = ({ attraction }) => {
          {attraction.name}{" "}
          </Typography>
          <Typography variant="body2" color="textSecondary" component="p">
-         <h3> Genre: {attraction.classifications[0].genre.name} </h3>
-         <h3> Segment: {attraction.classifications[0].segment.name} </h3>
-
+         <h4> Genre: {attraction.short_title} </h4>
+         <p>{attraction.taxonomies[0].name} </p>
          </Typography>
        </CardContent>
      </CardActionArea>

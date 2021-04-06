@@ -8,33 +8,36 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
-const useStyles = makeStyles({
-  root: {
-    maxWidth: 300,
-  },
-});
+// const useStyles = makeStyles({
+//   root: {
+//     maxWidth: 300,
+//     minWidth:300
+//   },
+// });
 
 
 const SingleEvent = ({ event }) => {
-  const classes = useStyles();
+  // const classes = useStyles();
 
   return (
 
-    <Card className={classes.root}>
+    <Card style={{width:"300px"}}>
      <CardActionArea>
        <CardMedia
          component="img"
          alt="Contemplative Reptile"
          height="140"
-         src={event.images[0].url}
+         src={event.performers[0].image}
          style={{ width: "100%" }}
          title="Contemplative Reptile"
        />
        <CardContent>
        <Typography gutterBottom variant="h5" component="h2">
        {event.name}{" "}
-       <p>  Date: {event.dates.start.localDate} </p>
-       <p>  Time: {event.dates.start.localTime} </p>
+       <p>  {event.stats.highest_price} </p>
+       <p>  {event.stats.lowest_price} </p>
+        <p>  {event.venue.name} </p>
+
 
        </Typography>
        </CardContent>
