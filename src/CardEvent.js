@@ -5,9 +5,9 @@ import Grid from "@material-ui/core/Grid";
 
 
 const CardEvent = (props) => {
-  const renderedEvents = props.events.map (event => {
-  return <SingleEvent event={event} />
-});
+  const renderedEvents = props.events.map ( (event) => {
+      return <SingleEvent event={event} />
+    })
 
 return (
   <>

@@ -19,16 +19,16 @@ class SearchBar extends React.Component  {
       <div>
       <form onSubmit={this.onFormSubmit}>
       <TextField
-                id="standard"
-                label="Search Activities"
-                value={this.state.term}
-                style={{ margin: 8 }}
-                margin="normal"
-                onChange={this.onInputChange}
-                InputLabelProps={{
-                  shrink: true,
-                }}
-              />
+        id="standard"
+        label="Search Activities"
+        value={this.state.term}
+        style={{ margin: 8 }}
+        margin="normal"
+        onChange={this.onInputChange}
+        InputLabelProps={{
+          shrink: true,
+        }}
+        />
               </form>
       </div>
     )

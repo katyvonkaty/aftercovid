@@ -58,9 +58,9 @@ class App extends React.Component {
 
       <First />
 
+        <CardEvent events = {this.state.events} attractions={this.state.attractions} />
 
-        <CardAttraction attractions = {this.state.attractions} />
-        <CardEvent events = {this.state.events} />
+        <CardAttraction attractions = {this.state.attractions}  />
 
         </Container>
       </>
