@@ -4,9 +4,9 @@ import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 
 
-const CardEvent = (props) => {
-  const renderedEvents = props.events.map ( (event) => {
-      return <SingleEvent event={event} />
+const CardEvent = ({events, attractions}) => {
+  const renderedEvents = events.map ( (event) => {
+      return <SingleEvent event={event} attractions={attractions} />
     })
 
 return (
@@ -17,7 +17,7 @@ return (
         container
         direction="row"
         justify="space-evenly"
-        alignItems="center"
+        alignItems="stretch"
       >
         {renderedEvents}
       </Grid>

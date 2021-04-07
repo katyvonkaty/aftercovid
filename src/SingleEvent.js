@@ -20,8 +20,7 @@ import Typography from '@material-ui/core/Typography';
 
 const SingleEvent = ({ event, attractions }) => {
   // const classes = useStyles();
-  console.log(attractions);
-
+  console.log(event);
   return (
     <Card style={{width:"300px"}}>
      <CardActionArea>
@@ -35,6 +34,7 @@ const SingleEvent = ({ event, attractions }) => {
          component="img"
          alt="Contemplative Reptile"
          height="140"
+         src={event.performers[0].image}
          style={{ width: "100vw%", height:"200px" }}
          title="Contemplative Reptile"
        />
@@ -45,9 +45,9 @@ const SingleEvent = ({ event, attractions }) => {
        <h2>{event.short_title} </h2>
 
      </Typography>
-       <p> <b> From </b> : {event.stats.lowest_price} </p>
+       <p> <b> From </b> : ${event.stats.lowest_price} </p>
      <p> <b>At:</b> {event.venue.name} </p>
-        <p> <b>At:</b> {event.score} </p>
+        <p> <b>Event Score:</b> {event.score.toString().slice(2,3)}/10 </p>
 
 
 

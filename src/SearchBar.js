@@ -17,7 +17,7 @@ class SearchBar extends React.Component  {
 
     return(
       <div>
-      <form onSubmit={this.onFormSubmit}>
+      <form onSubmit={this.onFormSubmit}  autocomplete="off">
       <TextField
         id="standard"
         label="Search Activities"
