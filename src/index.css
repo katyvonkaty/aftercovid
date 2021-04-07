@@ -3,17 +3,24 @@
 h1 {
 font-family: 'Fira Sans', sans-serif;
 font-weight:800;
+color:#17223B;
 }
 
-h2,h3 {
+h2{
   font-family: 'Fira Sans', sans-serif;
   color:#17223B;
   font-weight:500;
 }
 
+h3 {
+  font-family: 'Fira Sans', sans-serif;
+
+  color: #F0A63E;
+}
+
 h4 {
   font-family: 'Fira Sans', sans-serif;
-  font-weight:800;
+  font-weight:400;
 }
 
 .MuiAppBar-colorPrimary {

@@ -6,6 +6,8 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
+import Chip from '@material-ui/core/Chip';
+
 import Typography from '@material-ui/core/Typography';
 
 const EventSearchItem = ({event}) => {
@@ -18,23 +20,40 @@ const EventSearchItem = ({event}) => {
          alt="Contemplative Reptile"
          height="140"
          src={event.image}
-         style={{ width: "100%" }}
+         style={{ width: "100%", height:"200px" }}
          title="Contemplative Reptile"
        />
        <CardContent>
-       <Typography gutterBottom variant="h5" component="h2">
-       {event.type}{" "}
+       <Typography gutterBottom>
+       <h2> {event.name} </h2>
+
+     </Typography>
+       <p> <b> Event Type </b> : {event.type}</p>
+     <p> <b>Popularity:</b> {event.score}  </p>
+     <p> <b>Upcoming Events:</b> {event.num_upcoming_events}  </p>
+{event.genres ?
+     <Chip
+           label= {event.genres[0].name.toUpperCase()}
+
+           variant="outlined"
+         /> : null }
+
+         {event.taxonomies ?
+              <Chip
+                    label= {event.taxonomies[0].name.toUpperCase()}
+
+                    variant="outlined"
+                  /> : null }
 
 
-
-       </Typography>
        </CardContent>
      </CardActionArea>
      <CardActions>
        <Button size="small" color="primary">
        </Button>
        <Button size="small" color="primary">
-         Learn More
+    <a href= {event.url}> Buy Tickets</a>
+
        </Button>
      </CardActions>
    </Card>
@@ -43,3 +62,6 @@ const EventSearchItem = ({event}) => {
 }
 
 export default EventSearchItem
+//
+// <p> {event.genres ?  "Genre: " + event.genres[0].name : null} </p>
+// <p> {event.taxonomies ? event.taxonomies[0].name : null}  </p>

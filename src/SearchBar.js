@@ -20,10 +20,9 @@ class SearchBar extends React.Component  {
       <form onSubmit={this.onFormSubmit}>
       <TextField
                 id="standard"
-                label="SEarch"
+                label="Search Activities"
                 value={this.state.term}
                 style={{ margin: 8 }}
-                helperText="SEarch here!"
                 margin="normal"
                 onChange={this.onInputChange}
                 InputLabelProps={{

@@ -19,7 +19,7 @@ const EventSearchResult = ({eventResults}) => {
       container
       direction="row"
       justify="space-evenly"
-      alignItems="center"
+      alignItems="stretch"
     >
     {eventList}
     </Grid>
