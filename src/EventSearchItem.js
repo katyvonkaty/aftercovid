@@ -7,6 +7,8 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Chip from '@material-ui/core/Chip';
+import Badge from '@material-ui/core/Badge';
+
 
 import Typography from '@material-ui/core/Typography';
 
@@ -15,14 +17,22 @@ const EventSearchItem = ({event}) => {
     <>
     <Card style={{width:"300px"}}>
      <CardActionArea>
+     <Badge anchorOrigin={{
+    vertical: 'top',
+    horizontal: 'right',
+  }} color={"#000"} overlap="circle"  badgeContent=" ">
+
+
        <CardMedia
          component="img"
          alt="Contemplative Reptile"
          height="140"
          src={event.image}
-         style={{ width: "100%", height:"200px" }}
+         style={{ width: "100vw%", height:"200px" }}
          title="Contemplative Reptile"
        />
+       </Badge>
+
        <CardContent>
        <Typography gutterBottom>
        <h2> {event.name} </h2>

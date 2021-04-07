@@ -33,13 +33,13 @@ class First extends React.Component {
       return(
         <div>
         <Grid container fluid spacing={3} style={{marginBottom:"100px", marginTop:"100px"}}>
-          <Grid item xs={6}>
+          <Grid item xs={4}>
           <h1> After Covid </h1>
-          <h4> It is a long established fact that a reade </h4>
+          <h3> It is a long established fact that a readeestablished fact that a reade established fact that a reade  </h3>
           <SearchBar onFormSubmit={this.onTermSubmit} />
 
           </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={7}>
             <img style={{width:"100%"}} src={bg} />
             </Grid>
          </Grid>
