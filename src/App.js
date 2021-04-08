@@ -2,6 +2,7 @@ import React from "react"
 import axios from "axios"
 import Navbar from "./Navbar"
 import First from "./First"
+import EventDetail from "./EventDetail"
 import EventSearchResult from "./EventSearchResult"
 import CardAttraction from "./CardAttraction"
 import CardEvent from "./CardEvent"
@@ -19,7 +20,8 @@ class App extends React.Component {
 
   state= {
     attractions: [],
-    events:[]  }
+    events:[],
+  selectedEvent:null  }
 
   componentDidMount() {
     Promise.all([
@@ -49,6 +51,12 @@ class App extends React.Component {
     }
 
 
+        onEventSelect = (event) => {
+          this.setState({selectedEvent: event})
+          console.log("im from", event);
+        }
+
+
 
   render(){
     return(
@@ -58,8 +66,8 @@ class App extends React.Component {
 
       <First />
 
-        <CardEvent events = {this.state.events} attractions={this.state.attractions} />
-
+        <CardEvent onEventSelect={this.onEventSelect} events = {this.state.events} attractions={this.state.attractions} />
+        <EventDetail event={this.state.selectedEvent} />
         <CardAttraction attractions = {this.state.attractions}  />
 
         </Container>

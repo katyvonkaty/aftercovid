@@ -2,7 +2,7 @@ import React from "react"
 import EventSearchItem from "./EventSearchItem"
 import Grid from "@material-ui/core/Grid";
 
-const EventSearchResult = ({eventResults}) => {
+const EventSearchResult = ({eventResults, onEventSelect}) => {
 
   if (eventResults.length === 0) {
     return null

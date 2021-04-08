@@ -18,11 +18,10 @@ import Typography from '@material-ui/core/Typography';
 // });
 
 
-const SingleEvent = ({ event, attractions }) => {
+const SingleEvent = ({ event, onEventSelect }) => {
   // const classes = useStyles();
-  console.log(event);
   return (
-    <Card style={{width:"300px"}}>
+    <Card style={{width:"300px"}} onClick={() => onEventSelect(event)}>
      <CardActionArea>
      <Badge anchorOrigin={{
     vertical: 'top',

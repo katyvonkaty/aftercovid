@@ -10,7 +10,7 @@ import axios from "axios"
 class First extends React.Component {
   state = {
     eventResults:[],
-    eventAttractions:[]
+    eventAttractions:[],
   }
 
 
@@ -29,13 +29,14 @@ class First extends React.Component {
 
     }
 
+
     render(){
       return(
         <div>
         <Grid container fluid spacing={3} style={{marginBottom:"100px", marginTop:"100px"}}>
           <Grid item xs={4}>
-          <h1> After Covid </h1>
-          <h3> It is a long established fact that a readeestablished fact that a reade established fact that a reade  </h3>
+          <h1> One day, we will burn these masks and sing again. </h1>
+          <h4> The pending narrative is a powerful story form, persuading the responsible actors in public to take action by stirring up compelling passion for a specific goal. It has a cogency that comes from the threat that if we do not act in the right way now, the continuity of life will be jeopardized. </h4>
           <SearchBar onFormSubmit={this.onTermSubmit} />
 
           </Grid>

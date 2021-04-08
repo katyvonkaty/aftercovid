@@ -34,7 +34,7 @@ export default function Navbar() {
       <Container>
 
         <Toolbar>
-        <p> After Covid </p>
+        <h2> AfterCovid </h2>
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
           <MenuIcon />
 

@@ -4,9 +4,9 @@ import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 
 
-const CardEvent = ({events, attractions}) => {
+const CardEvent = ({events, attractions, onEventSelect}) => {
   const renderedEvents = events.map ( (event) => {
-      return <SingleEvent event={event} attractions={attractions} />
+      return <SingleEvent onEventSelect={onEventSelect} event={event} attractions={attractions} />
     })
 
 return (

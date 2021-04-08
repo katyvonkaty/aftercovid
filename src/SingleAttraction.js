@@ -31,13 +31,11 @@ const SingleAttraction = ({ attraction }) => {
          title="Contemplative Reptile"
        />
        <CardContent>
-         <Typography gutterBottom variant="h5" component="h2">
-         {attraction.name}{" "}
+         <Typography>
+         <h2> {attraction.name} </h2>
          </Typography>
-         <Typography variant="body2" color="textSecondary" component="p">
-         <h4> Genre: {attraction.short_title} </h4>
-         <p>{attraction.taxonomies[0].name} </p>
-         </Typography>
+         <p> <b> Genre </b>: {attraction.short_title} </p>
+         <p><b> Attraction </b>{attraction.taxonomies[0].name} </p>
        </CardContent>
      </CardActionArea>
      <CardActions>
